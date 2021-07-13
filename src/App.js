@@ -4,7 +4,7 @@ import halfSunny from "./images/05.svg";
 import rainy from "./images/09.svg";
 // import sunnyRainy from "./images/17.svg";
 
-const weatherInfo = [
+const weatherPredictions = [
   {
     weekDay: "Monday",
     imgURL: sunny,
@@ -41,11 +41,11 @@ const weatherInfo = [
     temp: "39C",
   },
 ];
-const allDays = weatherInfo.map((el) => {
+const allDays = weatherPredictions.map((el) => {
   return (
-    <div className="weekDays">
+    <div className="weekDays" key={el.weekDay}>
       <p className="WeekDay">{el.weekDay}</p>
-      <img className="image" src={el.imgURL} />
+      <img className="image" src={el.imgURL} alt="day" />
       <p className="temp">{el.temp}</p>
     </div>
   );
